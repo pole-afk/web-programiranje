@@ -1,0 +1,73 @@
+
+html, body {
+  height: 100vh; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+.tabla
+{
+  width: 604px;
+  display: flex;
+  flex-direction: column; 
+  position: relative;
+  align-self: center;
+  
+ 
+}
+.gornji_red,.donji_red
+{
+    display: flex;
+ justify-content: flex-start;
+ 
+}
+
+.polje
+{   
+    
+    width: 64px;          
+  height: 54px;         
+  background-color: #f1f1f1; 
+  border: 2px solid #333;    
+  display: flex;        
+  justify-content: center;  
+  align-items: center;     
+  font-size: 14px;        
+  font-weight: bold;  
+}
+.polje_siroko
+{
+    width: 78px;          
+    height: 78px;         
+    background-color: #f1f1f1; 
+    border: 2px solid #333;    
+    justify-content: center;  
+    align-items: center;     
+    font-size: 14px;        
+    font-weight: bold;  
+}
+.red-levo
+{
+  width: 30px;
+}
+.red-desno {
+  align-self: flex-end;
+
+  margin-top: -523px; 
+}
+.polje-dole,.polje-gore
+{
+  width: 54px;          
+  height: 64px;         
+  background-color: #f1f1f1; 
+  border: 2px solid #333;    
+  display: flex;        
+  justify-content: center;  
+  align-items: center;     
+  font-size: 14px;        
+  font-weight: bold;
+}
+.polje-dole
+{
+  margin-top: 14px;
+}
