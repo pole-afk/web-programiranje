@@ -1,69 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Monopoly</title>
     <link rel="stylesheet" href="tabla.css">
 </head>
 <body>
-        <div class="tabla">
-            <div style="margin-top: 20px; text-align: center;">
-                <button onclick="baciKocku()">Baci kocku</button>
-                <p id="info">Na potezu: Igrač 1 (🎲)</p>
+    <div class="main-container">
+        <!-- Igrač 1 info -->
+        <div id="igrac1-info">
+            <p><strong style="color: red;">🔴 Igrač 1</strong></p>
+            <p>Novac: <span class="novac">1500</span>$</p>
+            <p>Polja: <span class="polja"></span></p>
+        </div>
+
+        <!-- Tabla + Panel -->
+        <div class="tabla-i-panel">
+            <div id="panel">
+                <button id="baci-kockicu">🎲 Baci kockicu</button>
+                <div id="na-potezu">Na potezu: Igrač 1 (🔴)</div>
+
+                <!-- Panel za kupovinu i preskakanje -->
+                <div id="akcije" style="margin-top: 20px; text-align: center; display: none;">
+                    <button id="kupi-polje" style="margin: 5px;">🏠 Kupi polje</button>
+                    <button id="preskoci-kupovinu" style="margin: 5px;">⏭ Preskoči kupovinu</button>
+                </div>
             </div>
-            
-            
-            <div class="gornji_red">
-                <div class="polje_siroko"></div>              
-                <div class="polje-gore"></div>
-                <div class="polje-gore"></div>
-                <div class="polje-gore"></div>
-                <div class="polje-gore"></div>
-                <div class="polje-gore"></div>
-                <div class="polje-gore"></div>
-                <div class="polje-gore"></div>
-                <div class="polje-gore"></div>
-                <div class="polje-gore"></div>
-                <div class="polje_siroko"></div>
-            </div>
-            <div class="red-levo">
-                <div class="polje"></div>
-                <div class="polje"></div>
-                <div class="polje"></div>
-                <div class="polje"></div>
-                <div class="polje"></div>
-                <div class="polje"></div>
-                <div class="polje"></div>
-                <div class="polje"></div>
-                <div class="polje"></div>
-            </div>
-          
-            <div class="red-desno">
-                <div class="polje"></div>
-                <div class="polje"></div>
-                <div class="polje"></div>
-                <div class="polje"></div>
-                <div class="polje"></div>
-                <div class="polje"></div>
-                <div class="polje"></div>
-                <div class="polje"></div>
-                <div class="polje"></div>
-            </div>
-            <div class="donji_red">
-                <div class="polje_siroko"></div>               
-                <div class="polje-dole"></div>
-                <div class="polje-dole"></div>
-                <div class="polje-dole"></div>
-                <div class="polje-dole"></div>
-                <div class="polje-dole"></div>
-                <div class="polje-dole"></div>
-                <div class="polje-dole"></div>
-                <div class="polje-dole"></div>
-                <div class="polje-dole"></div>
-                <div class="polje_siroko"></div>
+
+            <!-- Tabla -->
+            <div id="tabla">
+                <!-- Donja ivica (0-10) -->
+                <div class="polje" data-index="0"  style="grid-column: 1; grid-row: 11;">0</div>
+                <div class="polje" data-index="1"  style="grid-column: 2; grid-row: 11;">1</div>
+                <div class="polje" data-index="2"  style="grid-column: 3; grid-row: 11;">2</div>
+                <div class="polje" data-index="3"  style="grid-column: 4; grid-row: 11;">3</div>
+                <div class="polje" data-index="4"  style="grid-column: 5; grid-row: 11;">4</div>
+                <div class="polje" data-index="5"  style="grid-column: 6; grid-row: 11;">5</div>
+                <div class="polje" data-index="6"  style="grid-column: 7; grid-row: 11;">6</div>
+                <div class="polje" data-index="7"  style="grid-column: 8; grid-row: 11;">7</div>
+                <div class="polje" data-index="8"  style="grid-column: 9; grid-row: 11;">8</div>
+                <div class="polje" data-index="9"  style="grid-column: 10; grid-row: 11;">9</div>
+                <div class="polje" data-index="10" style="grid-column: 11; grid-row: 11;">10</div>
+                <!-- Desna ivica (11-20) -->
+                <div class="polje" data-index="11" style="grid-column: 11; grid-row: 10;">11</div>
+                <div class="polje" data-index="12" style="grid-column: 11; grid-row: 9;">12</div>
+                <div class="polje" data-index="13" style="grid-column: 11; grid-row: 8;">13</div>
+                <div class="polje" data-index="14" style="grid-column: 11; grid-row: 7;">14</div>
+                <div class="polje" data-index="15" style="grid-column: 11; grid-row: 6;">15</div>
+                <div class="polje" data-index="16" style="grid-column: 11; grid-row: 5;">16</div>
+                <div class="polje" data-index="17" style="grid-column: 11; grid-row: 4;">17</div>
+                <div class="polje" data-index="18" style="grid-column: 11; grid-row: 3;">18</div>
+                <div class="polje" data-index="19" style="grid-column: 11; grid-row: 2;">19</div>
+                <div class="polje" data-index="20" style="grid-column: 11; grid-row: 1;">20</div>
+                <!-- Gornja ivica (21-30) -->
+                <div class="polje" data-index="21" style="grid-column: 10; grid-row: 1;">21</div>
+                <div class="polje" data-index="22" style="grid-column: 9; grid-row: 1;">22</div>
+                <div class="polje" data-index="23" style="grid-column: 8; grid-row: 1;">23</div>
+                <div class="polje" data-index="24" style="grid-column: 7; grid-row: 1;">24</div>
+                <div class="polje" data-index="25" style="grid-column: 6; grid-row: 1;">25</div>
+                <div class="polje" data-index="26" style="grid-column: 5; grid-row: 1;">26</div>
+                <div class="polje" data-index="27" style="grid-column: 4; grid-row: 1;">27</div>
+                <div class="polje" data-index="28" style="grid-column: 3; grid-row: 1;">28</div>
+                <div class="polje" data-index="29" style="grid-column: 2; grid-row: 1;">29</div>
+                <div class="polje" data-index="30" style="grid-column: 1; grid-row: 1;">30</div>
+                <!-- Leva ivica (31-39) -->
+                <div class="polje" data-index="31" style="grid-column: 1; grid-row: 2;">31</div>
+                <div class="polje" data-index="32" style="grid-column: 1; grid-row: 3;">32</div>
+                <div class="polje" data-index="33" style="grid-column: 1; grid-row: 4;">33</div>
+                <div class="polje" data-index="34" style="grid-column: 1; grid-row: 5;">34</div>
+                <div class="polje" data-index="35" style="grid-column: 1; grid-row: 6;">35</div>
+                <div class="polje" data-index="36" style="grid-column: 1; grid-row: 7;">36</div>
+                <div class="polje" data-index="37" style="grid-column: 1; grid-row: 8;">37</div>
+                <div class="polje" data-index="38" style="grid-column: 1; grid-row: 9;">38</div>
+                <div class="polje" data-index="39" style="grid-column: 1; grid-row: 10;">39</div>
+                <!-- Sredina -->
+                <div class="sredina" style="grid-column: 3 / span 7; grid-row: 3 / span 7;">
+                    <span>MONOPOLY</span>
+                </div>
             </div>
         </div>
-        <script src="./tabla.js"></script>
+
+        <!-- Igrač 2 info -->
+        <div id="igrac2-info">
+            <p><strong style="color: blue;">🔵 Igrač 2</strong></p>
+            <p>Novac: <span class="novac">1500</span>$</p>
+            <p>Polja: <span class="polja"></span></p>
+        </div>
+    </div>
+    <script src="tabla.js"></script>
 </body>
 </html>

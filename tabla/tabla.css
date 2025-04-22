@@ -1,96 +1,108 @@
-
-html, body {
-  height: 100vh; 
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
 }
-.tabla
-{
-  width: 604px;
+
+.main-container {
   display: flex;
-  flex-direction: column; 
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+#igrac1-info, #igrac2-info {
+  font-size: 14px;
+  line-height: 1.6;
+  min-width: 150px;
+}
+
+.tabla-i-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#panel {
+  text-align: center;
+  min-width: 300px;
+}
+
+#baci-kockicu {
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+#baci-kockicu:hover {
+  background-color: #45a049;
+}
+
+#tabla {
+  display: grid;
+  grid-template-columns: repeat(11, 70px);  /* Povećano sa 50px na 60px */
+  grid-template-rows: repeat(11, 70px);
+  gap: 0;
+  border: 2px solid #000;
   position: relative;
-  align-self: center;
+  background: #fff;
   
- 
-}
-.gornji_red,.donji_red
-{
-    display: flex;
- justify-content: flex-start;
- 
 }
 
-.polje
-{   
-    
-    width: 64px;          
-  height: 54px;         
-  background-color: #f1f1f1; 
-  border: 2px solid #333;    
-  display: flex;        
-  justify-content: center;  
-  align-items: center;     
-  font-size: 14px;        
-  font-weight: bold;  
-}
-.polje_siroko
-{
-    width: 78px;          
-    height: 78px;         
-    background-color: #f1f1f1; 
-    border: 2px solid #333;    
-    justify-content: center;  
-    align-items: center;     
-    font-size: 14px;        
-    font-weight: bold;  
-}
-.red-levo
-{
-  width: 30px;
-}
-.red-desno {
-  align-self: flex-end;
-
-  margin-top: -523px; 
-}
-.polje-dole,.polje-gore
-{
-  width: 54px;          
-  height: 64px;         
-  background-color: #f1f1f1; 
-  border: 2px solid #333;    
-  display: flex;        
-  justify-content: center;  
-  align-items: center;     
-  font-size: 14px;        
-  font-weight: bold;
-}
-.polje-dole
-{
-  margin-top: 14px;
-}
-.ikonica {
-  font-size: 18px;
-  text-align: center;
-  width: 100%;
-  margin-top: 4px;
-  pointer-events: none;
-}
-.igrac {
-  display: inline-block;
-  font-size: 18px;
-  margin-top: 2px;
-}
-
-.ikonica {
+.polje {
+  border: 1px solid #333;
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 16px;
-  text-align: center;
-  pointer-events: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
 }
 
-.vlasnik {
-  font-size: 12px;
-  color: #333;
+.sredina {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #fff;
+  border: 2px solid #000;
+  transform: rotate(45deg);
+  width: 320px;
+  height: 320px;
+  margin: auto;
+  z-index: 0;
 }
+
+.sredina span {
+  transform: rotate(-45deg);
+  padding: 5px;
+  display: block;
+  text-align: center;
+}
+.figurica {
+  font-size: 16px;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  pointer-events: none;
+}
+.figurica.igrac1 {
+  color: red;
+  right: 2px;
+}
+.figurica.igrac2 {
+  color: blue;
+  left: 2px;
+}
+  
