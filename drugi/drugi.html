@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Poker Duel</title>
+  <link rel="stylesheet" href="drugi.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎲 Poker Duel</h1>
+    
+    <label for="broj">Izaberi broj karte:</label>
+    <select id="broj">
+      <option value="">--</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="J">J</option>
+      <option value="Q">Q</option>
+      <option value="K">K</option>
+      <option value="A">A</option>
+    </select>
+
+    <label for="znak">Izaberi znak karte:</label>
+    <select id="znak">
+      <option value="">--</option>
+      <option value="♠">♠</option>
+      <option value="♥">♥</option>
+      <option value="♦">♦</option>
+      <option value="♣">♣</option>
+    </select>
+
+    <div class="buttons">
+      <button onclick="dodajKartu(1)"> Dodaj kartu igraču 1</button>
+      <button onclick="dodajKartu(2)"> Dodaj kartu igraču 2</button>
+    </div>
+
+    <button class="show" onclick="prikaziKarte()"> Prikaži karte i pobednika</button>
+    <button onclick="resetIgra()">🔁 Resetuj igru</button>
+    <div id="rezultat"></div>
+  </div>
+
+  <script src="drugi.js"></script>
+</body>
+</html>

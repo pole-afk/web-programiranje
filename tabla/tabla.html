@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="..//game-table/tabla.css">
+    <link rel="stylesheet" href="tabla.css">
 </head>
 <body>
         <div class="tabla">
+            <div style="margin-top: 20px; text-align: center;">
+                <button onclick="baciKocku()">Baci kocku</button>
+                <p id="info">Na potezu: Igrač 1 (🎲)</p>
+            </div>
+            
+            
             <div class="gornji_red">
                 <div class="polje_siroko"></div>              
                 <div class="polje-gore"></div>
@@ -58,5 +64,6 @@
                 <div class="polje_siroko"></div>
             </div>
         </div>
+        <script src="./tabla.js"></script>
 </body>
 </html>

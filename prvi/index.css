@@ -1,0 +1,41 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    flex-direction: column;  
+}
+h1 {
+    margin-bottom: 20px;  
+}
+
+.flexbox {
+    
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    gap: 10px;  
+    width: 500px;
+}
+p,input
+{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+button
+{
+    
+    
+    background-color: rgb(20, 97, 20);
+    border-radius: 5%;
+    margin-bottom: 20px;
+}
+.suma
+{
+    margin-bottom: 50px;
+}

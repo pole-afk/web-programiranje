@@ -71,3 +71,26 @@ html, body {
 {
   margin-top: 14px;
 }
+.ikonica {
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+  margin-top: 4px;
+  pointer-events: none;
+}
+.igrac {
+  display: inline-block;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.ikonica {
+  font-size: 16px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.vlasnik {
+  font-size: 12px;
+  color: #333;
+}
