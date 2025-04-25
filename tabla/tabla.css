@@ -100,9 +100,35 @@ body {
 .figurica.igrac1 {
   color: red;
   right: 2px;
+  font-size: 16px;
+  position: absolute;
+  top: 2px;  /* Premestili smo figurice ka vrhu */
+  right: 2px; /* Premestili smo figurice ka levoj strani */
+  pointer-events: none;
+
 }
 .figurica.igrac2 {
   color: blue;
   left: 2px;
+  font-size: 16px;
+  position: absolute;
+  top: 2px;  /* Premestili smo figurice ka vrhu */
+  left: 2px; /* Premestili smo figurice ka levoj strani */
+  pointer-events: none;
+
 }
+.figurica.igrac3 {
+  color: rgb(0, 255, 76);
+  left: 2px;
+  
+}
+.figurica.igrac4 {
+  color: rgb(255, 238, 0);
+  right: 2px;
+}
+.vlasnik1 { border: 3px solid red; }
+.vlasnik2 { border: 3px solid blue; }
+.vlasnik3 { border: 3px solid green; }
+.vlasnik4 { border: 3px solid yellow; }
+
   

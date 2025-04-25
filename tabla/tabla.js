@@ -1,7 +1,9 @@
 // Osnovne postavke igre
 const igraci = [
     { id: 1, ime: "Igrač 1", boja: "red", simbol: "🔴", novac: 1500, pozicija: 0, polja: [] },
-    { id: 2, ime: "Igrač 2", boja: "blue", simbol: "🔵", novac: 1500, pozicija: 0, polja: [] }
+    { id: 2, ime: "Igrač 2", boja: "blue", simbol: "🔵", novac: 1500, pozicija: 0, polja: [] },
+    { id: 3, ime: "Igrač 3", boja: "green", simbol: "🟢", novac: 1500, pozicija: 0, polja: [] },
+    { id: 4, ime: "Igrač 4", boja: "yellow", simbol: "🟡", novac: 1500, pozicija: 0, polja: [] }
 ];
 
 let trenutniIgracIndex = 0;
@@ -78,13 +80,14 @@ function postaviFigurice() {
     
     // Dodavanje novih figurica
     igraci.forEach(igrac => {
-        const polje = polja[igrac.pozicija];
+        const polje = polja[igrac.pozicija]; // Uzima poziciju igrača
         const figurica = document.createElement('div');
         figurica.className = `figurica igrac${igrac.id}`;
         figurica.textContent = igrac.simbol;
-        polje.appendChild(figurica);
+        polje.appendChild(figurica); // Dodaje figuricu u polje
     });
 }
+
 
 // Bacanje kockice
 function baciKockicu() {
@@ -131,7 +134,9 @@ function pomeriFiguricu(igracId, pozicija) {
     const polje = polja[pozicija];
     const figurica = document.createElement('div');
     figurica.className = `figurica igrac${igracId}`;
-    figurica.textContent = igracId === 1 ? "🔴" : "🔵";
+    const igrac = igraci.find(i => i.id === igracId);
+    figurica.textContent = igrac.simbol;
+
     polje.appendChild(figurica);
 }
 
@@ -249,7 +254,8 @@ function kupiPolje() {
         // Obojimo polje u boju igrača
         const poljeElement = document.querySelector(`.polje[data-index="${pozicija}"]`);
         if (poljeElement) {
-            poljeElement.style.backgroundColor = poljeElement.classList.add(`vlasnik${trenutniIgrac.id}`);
+            poljeElement.classList.add(`vlasnik${trenutniIgrac.id}`);
+
         }
         
         document.getElementById('na-potezu').textContent = 
