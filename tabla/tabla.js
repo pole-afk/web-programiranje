@@ -92,33 +92,53 @@ function postaviFigurice() {
 // Bacanje kockice
 function baciKockicu() {
     if (!igraUToku) return;
-    
+
     const dugme = document.getElementById('baci-kockicu');
     dugme.disabled = true;
-    
-    // Nasumično određivanje vrednosti kockice (1-6)
+
     kockicaVrednost = Math.floor(Math.random() * 6) + 1;
-    
+    rotirajKockicu3D(kockicaVrednost);
+
     const trenutniIgrac = igraci[trenutniIgracIndex];
     const novaPozicija = (trenutniIgrac.pozicija + kockicaVrednost) % 40;
-    
-    // Ispis vrednosti kockice u konzolu za debagovanje
-    console.log(`Bacanje kockice: ${kockicaVrednost}`);
-    console.log(`Igrac ${trenutniIgrac.ime} sa pozicije ${trenutniIgrac.pozicija} ide na ${novaPozicija}`);
-    
-    // Animacija kretanja
+
     let trenutnaPoz = trenutniIgrac.pozicija;
-    const interval = setInterval(() => {
-        trenutnaPoz = (trenutnaPoz + 1) % 40;
-        pomeriFiguricu(trenutniIgrac.id, trenutnaPoz);
-        
-        if (trenutnaPoz === novaPozicija) {
-            clearInterval(interval);
-            trenutniIgrac.pozicija = novaPozicija;
-            obradiPolje(novaPozicija);
-        }
-    }, 200);
+
+    setTimeout(() => {
+        const interval = setInterval(() => {
+            trenutnaPoz = (trenutnaPoz + 1) % 40;
+            pomeriFiguricu(trenutniIgrac.id, trenutnaPoz);
+
+            if (trenutnaPoz === novaPozicija) {
+                clearInterval(interval);
+                trenutniIgrac.pozicija = novaPozicija;
+                obradiPolje(novaPozicija);
+            }
+        }, 200);
+    }, 1000);
 }
+
+function rotirajKockicu3D(broj) {
+    const kockica = document.getElementById('kockica-3d');
+    const rotacije = {
+        1: [0, 0],
+        2: [90, 0],
+        3: [0, -90],
+        4: [0, 90],
+        5: [-90, 0],
+        6: [180, 0]
+    };
+    const [x, y] = rotacije[broj];
+    kockica.style.transform = `rotateX(${x + 720}deg) rotateY(${y + 720}deg)`; // +720 za efekat okretanja
+}
+
+
+// Vraća emoji u zavisnosti od broja na kockici
+function kockicaEmoji(broj) {
+    const emojiji = ["", "⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+    return emojiji[broj];
+}
+
 
 // Pomeranje figurice
 function pomeriFiguricu(igracId, pozicija) {

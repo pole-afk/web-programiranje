@@ -79,12 +79,19 @@
                     <div class="polje" data-index="39" style="grid-column: 1; grid-row: 10;">39</div>
                     <!-- Sredina -->
                     <div class="sredina" style="grid-column: 3 / span 7; grid-row: 3 / span 7;">
-                        <span>MONOPOLY</span>
+                        <div id="kockica-container" class="kockica-3d-container">
+                            <div class="kockica-3d" id="kockica-3d">
+                                <div class="side front">1</div>
+                                <div class="side back">6</div>
+                                <div class="side right">3</div>
+                                <div class="side left">4</div>
+                                <div class="side top">5</div>
+                                <div class="side bottom">2</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Igrač 2 info -->
             <div id="igrac2-info">
                 <p><strong style="color: blue;">🔵 Igrač 2</strong></p>
                 <p>Novac: <span class="novac">1500</span>$</p>
@@ -95,6 +102,8 @@
                 <p>Novac: <span class="novac">1500</span>$</p>
                 <p>Polja: <span class="polja"></span></p>
             </div>
+            <!-- Igrač 2 info -->
+            
         </div>
         <script src="tabla.js"></script>
     </body>
