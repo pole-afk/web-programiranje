@@ -5,7 +5,6 @@ body {
   background-color: white;
   display: flex;
 }
-
 .main-container {
   display: flex;
   justify-content: center;
@@ -13,7 +12,6 @@ body {
   gap: 40px;
   margin-top: 20px;
 }
-
 #igrac1-info, #igrac2-info,#igrac3-info,#igrac4-info {
   font-size: 14px;
   line-height: 1.6;
@@ -23,31 +21,15 @@ body {
 {
   margin-left: 50px;
 }
-
 .tabla-i-panel {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
-
 #panel {
   text-align: center;
   min-width: 300px;
-}
-
-#baci-kockicu {
-  padding: 8px 16px;
-  font-size: 14px;
-  cursor: pointer;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-}
-
-#baci-kockicu:hover {
-  background-color: #45a049;
 }
 
 #tabla {
@@ -60,7 +42,6 @@ body {
   background: #fff;
   
 }
-
 .polje {
   border: 1px solid #333;
   background-color: #f4f4f4;
@@ -75,7 +56,6 @@ body {
   word-wrap: break-word;
 
 }
-
 .sredina {
   display: flex;
   align-items: center;
@@ -90,7 +70,6 @@ body {
   margin: auto;
   z-index: 0;
 }
-
 .sredina span {
   transform: rotate(-45deg);
   padding: 5px;
@@ -137,14 +116,11 @@ body {
 .vlasnik2 { border: 3px solid blue; }
 .vlasnik3 { border: 3px solid green; }
 .vlasnik4 { border: 3px solid yellow; }
-
-  
 .kockica-3d-container {
   width: 80px;
   height: 80px;
   perspective: 600px;
 }
-
 .kockica-3d {
   width: 100%;
   height: 100%;
@@ -153,7 +129,6 @@ body {
   transform: rotateX(0deg) rotateY(0deg);
   transition: transform 1s ease-out;
 }
-
 .kockica-3d::before,
 .kockica-3d::after {
   content: '';
@@ -161,7 +136,6 @@ body {
   width: 100%;
   height: 100%;
 }
-
 .kockica-3d .side {
   position: absolute;
   width: 100%;
@@ -174,10 +148,37 @@ body {
   justify-content: center;
   backface-visibility: hidden;
 }
-
 .kockica-3d .front  { transform: rotateY(0deg) translateZ(40px); }
 .kockica-3d .back   { transform: rotateY(180deg) translateZ(40px); }
 .kockica-3d .right  { transform: rotateY(90deg) translateZ(40px); }
 .kockica-3d .left   { transform: rotateY(-90deg) translateZ(40px); }
 .kockica-3d .top    { transform: rotateX(90deg) translateZ(40px); }
 .kockica-3d .bottom { transform: rotateX(-90deg) translateZ(40px); }
+.kucica {
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  position: absolute;
+  top: 2px;
+}
+
+.hotel {
+  width: 16px;
+  height: 16px;
+  background-color: red;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+#baci-kockicu {
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+#baci-kockicu:hover {
+  background-color: #45a049;
+}

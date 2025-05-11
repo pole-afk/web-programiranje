@@ -1,0 +1,111 @@
+    <!DOCTYPE html>
+    <html lang="sr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Monopoly</title>
+        <link rel="stylesheet" href="4.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <!-- Igrač 1 info -->
+            <div id="igrac1-info">
+                <p><strong style="color: red;">🔴 Igrač 1</strong></p>
+                <p>Novac: <span class="novac">1500</span>$</p>
+                <p>Polja: <span class="polja"></span></p>
+            </div>
+            <div id="igrac4-info">
+                <p><strong style="color: rgb(255, 230, 0);">🟡 Igrač 4</strong></p>
+                <p>Novac: <span class="novac">1500</span>$</p>
+                <p>Polja: <span class="polja"></span></p>
+            </div>
+            <!-- Tabla + Panel -->
+            <div class="tabla-i-panel">
+                <div id="panel">
+                    <button id="baci-kockicu">🎲 Baci kockicu</button>
+                    <div id="na-potezu">Na potezu: Igrač 1 (🔴)</div>
+
+                    <!-- Panel za kupovinu i preskakanje -->
+                    <div id="akcije" style="text-align: center; display: none;">
+                        <button id="kupi-polje" style="margin: 5px;">🏠 Kupi polje</button>
+                        <button id="preskoci-kupovinu" style="margin: 5px;">⏭ Preskoči kupovinu</button>
+                        <button id="izgradi" style="margin: 5px;">🏗 Izgradi</button>
+                    </div>
+                </div>
+
+                <!-- Tabla -->
+                <div id="tabla">
+                    <!-- Donja ivica (0-10) -->
+                    <div class="polje" data-index="0"  style="grid-column: 1; grid-row: 11;">Jovac</div>
+                    <div class="polje" data-index="1"  style="grid-column: 2; grid-row: 11;">Teren</div>
+                    <div class="polje" data-index="2"  style="grid-column: 3; grid-row: 11;">Fk Jovac</div>
+                    <div class="polje" data-index="3"  style="grid-column: 4; grid-row: 11;">Ostrikovac</div>
+                    <div class="polje" data-index="4"  style="grid-column: 5; grid-row: 11;">Majur</div>
+                    <div class="polje" data-index="5"  style="grid-column: 6; grid-row: 11;">Gilje</div>
+                    <div class="polje" data-index="6"  style="grid-column: 7; grid-row: 11;">Jagodina</div>
+                    <div class="polje" data-index="7"  style="grid-column: 8; grid-row: 11;">Paracin</div>
+                    <div class="polje" data-index="8"  style="grid-column: 9; grid-row: 11;">Cuprija</div>
+                    <div class="polje" data-index="9"  style="grid-column: 10; grid-row: 11;">Despacito</div>
+                    <div class="polje" data-index="10" style="grid-column: 11; grid-row: 11;">Gimnazija</div>
+                    <!-- Desna ivica (11-20) -->
+                    <div class="polje" data-index="11" style="grid-column: 11; grid-row: 10;">Djura</div>
+                    <div class="polje" data-index="12" style="grid-column: 11; grid-row: 9;">Partizan</div>
+                    <div class="polje" data-index="13" style="grid-column: 11; grid-row: 8;">Dom zdravlja</div>
+                    <div class="polje" data-index="14" style="grid-column: 11; grid-row: 7;">Slavija</div>
+                    <div class="polje" data-index="15" style="grid-column: 11; grid-row: 6;">Bambi</div>
+                    <div class="polje" data-index="16" style="grid-column: 11; grid-row: 5;">Secerko</div>
+                    <div class="polje" data-index="17" style="grid-column: 11; grid-row: 4;">17</div>
+                    <div class="polje" data-index="18" style="grid-column: 11; grid-row: 3;">18</div>
+                    <div class="polje" data-index="19" style="grid-column: 11; grid-row: 2;">19</div>
+                    <div class="polje" data-index="20" style="grid-column: 11; grid-row: 1;">20</div>
+                    <!-- Gornja ivica (21-30) -->
+                    <div class="polje" data-index="21" style="grid-column: 10; grid-row: 1;">21</div>
+                    <div class="polje" data-index="22" style="grid-column: 9; grid-row: 1;">22</div>
+                    <div class="polje" data-index="23" style="grid-column: 8; grid-row: 1;">23</div>
+                    <div class="polje" data-index="24" style="grid-column: 7; grid-row: 1;">24</div>
+                    <div class="polje" data-index="25" style="grid-column: 6; grid-row: 1;">25</div>
+                    <div class="polje" data-index="26" style="grid-column: 5; grid-row: 1;">26</div>
+                    <div class="polje" data-index="27" style="grid-column: 4; grid-row: 1;">27</div>
+                    <div class="polje" data-index="28" style="grid-column: 3; grid-row: 1;">28</div>
+                    <div class="polje" data-index="29" style="grid-column: 2; grid-row: 1;">29</div>
+                    <div class="polje" data-index="30" style="grid-column: 1; grid-row: 1;">30</div>
+                    <!-- Leva ivica (31-39) -->
+                    <div class="polje" data-index="31" style="grid-column: 1; grid-row: 2;">31</div>
+                    <div class="polje" data-index="32" style="grid-column: 1; grid-row: 3;">32</div>
+                    <div class="polje" data-index="33" style="grid-column: 1; grid-row: 4;">33</div>
+                    <div class="polje" data-index="34" style="grid-column: 1; grid-row: 5;">34</div>
+                    <div class="polje" data-index="35" style="grid-column: 1; grid-row: 6;">35</div>
+                    <div class="polje" data-index="36" style="grid-column: 1; grid-row: 7;">36</div>
+                    <div class="polje" data-index="37" style="grid-column: 1; grid-row: 8;">37</div>
+                    <div class="polje" data-index="38" style="grid-column: 1; grid-row: 9;">38</div>
+                    <div class="polje" data-index="39" style="grid-column: 1; grid-row: 10;">39</div>
+                    <!-- Sredina -->
+                    <div class="sredina" style="grid-column: 3 / span 7; grid-row: 3 / span 7;">
+                        <div id="kockica-container" class="kockica-3d-container">
+                            <div class="kockica-3d" id="kockica-3d">
+                                <div class="side front">1</div>
+                                <div class="side back">6</div>
+                                <div class="side right">3</div>
+                                <div class="side left">4</div>
+                                <div class="side top">5</div>
+                                <div class="side bottom">2</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="igrac2-info">
+                <p><strong style="color: blue;">🔵 Igrač 2</strong></p>
+                <p>Novac: <span class="novac">1500</span>$</p>
+                <p>Polja: <span class="polja"></span></p>
+            </div>
+            <div id="igrac3-info">
+                <p><strong style="color: rgb(0, 255, 55);">🟢 Igrač 3</strong></p>
+                <p>Novac: <span class="novac">1500</span>$</p>
+                <p>Polja: <span class="polja"></span></p>
+            </div>
+            <!-- Igrač 2 info -->
+            
+        </div>
+        <script src="4.js"></script>
+    </body>
+    </html>

@@ -3,21 +3,29 @@
     <head>
         <meta charset="UTF-8">
         <title>Monopoly</title>
-        <link rel="stylesheet" href="tabla.css">
+        <link rel="stylesheet" href="5.css">
     </head>
     <body>
         <div class="main-container">
             <!-- Igrač 1 info -->
-            <div id="igrac1-info">
-                <p><strong style="color: red;">🔴 Igrač 1</strong></p>
-                <p>Novac: <span class="novac">1500</span>$</p>
-                <p>Polja: <span class="polja"></span></p>
-            </div>
-            <div id="igrac4-info">
-                <p><strong style="color: rgb(255, 230, 0);">🟡 Igrač 4</strong></p>
-                <p>Novac: <span class="novac">1500</span>$</p>
-                <p>Polja: <span class="polja"></span></p>
-            </div>
+            <div class="igraci-red">
+        <div id="igrac1-info" class="igrac-info">
+            <p><strong style="color: red;">🔴 Igrač 1</strong></p>
+            <p>Novac: <span class="novac">1500</span>$</p>
+            <p>Polja: <span class="polja"></span></p>
+        </div>
+        <div id="igrac2-info" class="igrac-info">
+            <p><strong style="color: blue;">🔵 Igrač 2</strong></p>
+            <p>Novac: <span class="novac">1500</span>$</p>
+            <p>Polja: <span class="polja"></span></p>
+        </div>
+        
+        <div id="igrac4-info" class="igrac-info">
+            <p><strong style="color: yellow;">🟡 Igrač 4</strong></p>
+            <p>Novac: <span class="novac">1500</span>$</p>
+            <p>Polja: <span class="polja"></span></p>
+        </div>
+    </div>
             <!-- Tabla + Panel -->
             <div class="tabla-i-panel">
                 <div id="panel">
@@ -79,32 +87,27 @@
                     <div class="polje" data-index="39" style="grid-column: 1; grid-row: 10;">39</div>
                     <!-- Sredina -->
                     <div class="sredina" style="grid-column: 3 / span 7; grid-row: 3 / span 7;">
-                        <div id="kockica-container" class="kockica-3d-container">
-                            <div class="kockica-3d" id="kockica-3d">
-                                <div class="side front">1</div>
-                                <div class="side back">6</div>
-                                <div class="side right">3</div>
-                                <div class="side left">4</div>
-                                <div class="side top">5</div>
-                                <div class="side bottom">2</div>
-                            </div>
-                        </div>
+                        <span>MONOPOLY</span>
                     </div>
                 </div>
             </div>
-            <div id="igrac2-info">
-                <p><strong style="color: blue;">🔵 Igrač 2</strong></p>
-                <p>Novac: <span class="novac">1500</span>$</p>
-                <p>Polja: <span class="polja"></span></p>
-            </div>
-            <div id="igrac3-info">
-                <p><strong style="color: rgb(0, 255, 55);">🟢 Igrač 3</strong></p>
-                <p>Novac: <span class="novac">1500</span>$</p>
-                <p>Polja: <span class="polja"></span></p>
-            </div>
+
             <!-- Igrač 2 info -->
-            
+            <div class="igraci-red donji-red">
+        <div id="igrac5-info" class="igrac-info">
+            <p><strong style="color: orange;">🟠 Igrač 5</strong></p>
+            <p>Novac: <span class="novac">1500</span>$</p>
+            <p>Polja: <span class="polja"></span></p>
         </div>
-        <script src="tabla.js"></script>
+        <div id="igrac3-info" class="igrac-info">
+            <p><strong style="color: green;">🟢 Igrač 3</strong></p>
+            <p>Novac: <span class="novac">1500</span>$</p>
+            <p>Polja: <span class="polja"></span></p>
+        </div>
+    </div>
+        </div>
+        </div>
+        
+        <script src="5.js"></script>
     </body>
     </html>

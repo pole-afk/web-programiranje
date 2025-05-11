@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+#igrac1-info, #igrac2-info {
+  font-size: 14px;
+  line-height: 1.6;
+  min-width: 150px;
+}
+
+.tabla-i-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#panel {
+  text-align: center;
+  min-width: 300px;
+}
+#tabla {
+  display: grid;
+  grid-template-columns: repeat(11, 75px);  /* Povećano sa 50px na 60px */
+  grid-template-rows: repeat(11, 75px);
+  gap: 0;
+  border: 2px solid #000;
+  position: relative;
+  background: #fff;
+  
+}
+
+.polje {
+  border: 1px solid #333;
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  font-size: small;
+  word-wrap: break-word;
+
+}
+
+.sredina {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #fff;
+  border: 2px solid #000;
+  transform: rotate(45deg);
+  width: 320px;
+  height: 320px;
+  margin: auto;
+  z-index: 0;
+}
+
+.sredina span {
+  transform: rotate(-45deg);
+  padding: 5px;
+  display: block;
+  text-align: center;
+}
+.figurica {
+  font-size: 16px;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  pointer-events: none;
+}
+.figurica.igrac1 {
+  color: red;
+  right: 2px;
+  font-size: 16px;
+  position: absolute;
+  top: 2px;  /* Premestili smo figurice ka vrhu */
+  right: 2px; /* Premestili smo figurice ka levoj strani */
+  pointer-events: none;
+
+}
+.figurica.igrac2 {
+  color: blue;
+  left: 2px;
+  font-size: 16px;
+  position: absolute;
+  top: 2px;  /* Premestili smo figurice ka vrhu */
+  left: 2px; /* Premestili smo figurice ka levoj strani */
+  pointer-events: none;
+
+}
+.figurica.igrac3 {
+  color: rgb(0, 255, 76);
+  left: 2px;
+  
+}
+
+.vlasnik1 { border: 3px solid red; }
+.vlasnik2 { border: 3px solid blue; }
+.vlasnik3 { border: 3px solid green; }
+.kockica-3d-container {
+  width: 80px;
+  height: 80px;
+  perspective: 600px;
+}
+.kockica-3d {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg);
+  transition: transform 1s ease-out;
+}
+.kockica-3d::before,
+.kockica-3d::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.kockica-3d .side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border: 2px solid black;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+}
+.kockica-3d .front  { transform: rotateY(0deg) translateZ(40px); }
+.kockica-3d .back   { transform: rotateY(180deg) translateZ(40px); }
+.kockica-3d .right  { transform: rotateY(90deg) translateZ(40px); }
+.kockica-3d .left   { transform: rotateY(-90deg) translateZ(40px); }
+.kockica-3d .top    { transform: rotateX(90deg) translateZ(40px); }
+.kockica-3d .bottom { transform: rotateX(-90deg) translateZ(40px); }
+#baci-kockicu {
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+#baci-kockicu:hover {
+  background-color: #45a049;
+}

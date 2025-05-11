@@ -1,9 +1,8 @@
-// Osnovne postavke igre
+3// Osnovne postavke igre
 const igraci = [
     { id: 1, ime: "Igrač 1", boja: "red", simbol: "🔴", novac: 1500, pozicija: 0, polja: [] },
     { id: 2, ime: "Igrač 2", boja: "blue", simbol: "🔵", novac: 1500, pozicija: 0, polja: [] },
     { id: 3, ime: "Igrač 3", boja: "green", simbol: "🟢", novac: 1500, pozicija: 0, polja: [] },
-    { id: 4, ime: "Igrač 4", boja: "yellow", simbol: "🟡", novac: 1500, pozicija: 0, polja: [] }
 ];
 
 let trenutniIgracIndex = 0;
@@ -117,7 +116,6 @@ function baciKockicu() {
         }, 200);
     }, 1000);
 }
-
 function rotirajKockicu3D(broj) {
     const kockica = document.getElementById('kockica-3d');
     const rotacije = {
@@ -129,16 +127,12 @@ function rotirajKockicu3D(broj) {
         6: [180, 0]
     };
     const [x, y] = rotacije[broj];
-    kockica.style.transform = `rotateX(${x + 720}deg) rotateY(${y + 720}deg)`; // +720 za efekat okretanja
+    kockica.style.transform = `rotateX(${x + 1800}deg) rotateY(${y + 1800}deg)`; 
 }
-
-
-// Vraća emoji u zavisnosti od broja na kockici
 function kockicaEmoji(broj) {
     const emojiji = ["", "⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
     return emojiji[broj];
 }
-
 
 // Pomeranje figurice
 function pomeriFiguricu(igracId, pozicija) {
